@@ -7,6 +7,7 @@ module.exports = {
         const itens = await connection('itens').select('*');
         return response.json(itens);
 
+        
     },
 
     async create(request, response){

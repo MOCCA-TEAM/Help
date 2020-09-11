@@ -5,7 +5,7 @@ module.exports = {
         const petshops_id = request.headers.authorization;
 
         const itens = await connection('itens')
-            .where('petshops_id', petshops_id)
+            .where('petshop_id', petshops_id)
             .select('*');
 
         return response.json(itens);

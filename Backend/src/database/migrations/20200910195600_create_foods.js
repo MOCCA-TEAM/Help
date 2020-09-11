@@ -6,7 +6,7 @@ exports.up = function(knex) {
     table.decimal('preco').notNullable();
     table.string('valornutricional').notNullable();
     table.string('petshop_id').notNullable();
-    table.foreign('petshop_id').references('id').inTable('petshop');
+    table.foreign('petshop_id').references('id').inTable('petshops');
     });
 };
 

@@ -5,14 +5,14 @@ exports.up = function(knex) {
       table.string('name').notNullable();
       table.string('price').notNullable();
       table.string('description').notNullable();
-      /*table.blob('picture').notNullable();
 
-      table.string('petshops_id');
+      table.string('petshop_id');
 
-      table.foreign('petshops_id').references('id').inTable('petshops')*/
+      table.foreign('petshop_id').references('id').inTable('petshop')
   })
 };
 
 exports.down = function(knex) {
   return knex.schema.dropTable('itens')
 };
+

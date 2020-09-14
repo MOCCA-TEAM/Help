@@ -1,0 +1,11 @@
+.logon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logon-container section.from form a{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}

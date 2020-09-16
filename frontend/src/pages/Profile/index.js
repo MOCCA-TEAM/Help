@@ -58,7 +58,7 @@ export default function Profile(){
             <ul>
                {products.map(product => (
                <li key ={product.id}>
-                    <strong>ITEM:</strong>
+                    <strong>PRODUTO:</strong>
                     <p>{product.name}</p>
 
                     <strong>DESCRIÇÃO:</strong>

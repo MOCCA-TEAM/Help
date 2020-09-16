@@ -5,10 +5,12 @@ import { FiPower, FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 
 export default function Profile(){
+    const petshopName = localStorage.getItem('petshopName')
+
     return (
         <div classname="profile-container">
             <header>
-                <span>Bem vinda, meu pet</span>
+                <span>Bem vinda, {petshopName} </span>
 
                 <Link className="button" to="/product/new">Cadastrar novo produto</Link>
                 <button type="button">

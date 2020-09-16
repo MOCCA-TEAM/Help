@@ -12,8 +12,8 @@ var ItemController = require('./controllers/ItemController');
 var ProfileController = require('./controllers/ProfileController');
 
 
-routes.post('/sessions', SessionController.create);
-routes.get('/profile', ProfileController.index) 
+routes.post('/sessions', SessionController.create); // Login
+routes.get('/profile', ProfileController.index); // Perfil
 
 routes.post('/petshops', PetshopsController.create);// Cria um petshop
 routes.get('/petshops', PetshopsController.list);// Listar todos os petshops

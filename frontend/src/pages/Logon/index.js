@@ -4,6 +4,8 @@ import './styles.css';
 import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
 
+import logoImg from '../../assets/logo.jpg'
+
 export default function Logon(){
     var [id, setId] = useState('');
     var history = useHistory();
@@ -18,8 +20,7 @@ export default function Logon(){
             localStorage.setItem('petshopId', id);
             localStorage.setItem('petshopName', response.data.name);
 
-            history.push('/register'); //temporario enquanto não faz tela de perfil
-            //history.push('/profile');//falta criar a rota do perfil
+            history.push('/profile');
         }
         catch(err){
             alert('Falha no LogIn, tente novamente!');
@@ -38,6 +39,7 @@ export default function Logon(){
                         Não Tenho Cadastro</Link>
                 </form>
             </section>
+            <img src={logoImg} alt="ProjectPet" />
         </div>
     );
 }

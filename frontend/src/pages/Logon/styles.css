@@ -1,11 +1,30 @@
 .logon-container{
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0  auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.logon-container section.from form a{
-    display: flex;
+img{
+    width: 500px;
+    height: 300px;
+}
+.form{
+    padding: 30px;
+}
+.logon-container section.from form a {
+    display: flex;  
     align-items: center;
     margin-top: 40px;
+}
+.logon-container section.from form h1{
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+h1{
+    font-size: 32px;
+    margin-bottom: 10px;
 }

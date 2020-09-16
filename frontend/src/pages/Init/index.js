@@ -44,6 +44,7 @@ export default function Init(){
 
                     <strong>WHATSAPP:</strong>
                     <p>{petshops.whatsapp}</p>
+                    
                 </li>
                 ))} 
             </ul>

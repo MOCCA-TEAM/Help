@@ -47,7 +47,7 @@ export default function Profile(){
             <header>
                 <span>Bem vinda, {petshopName} </span>
 
-                <Link className="button" to="/product/new">Cadastrar novo produto</Link>
+                <Link className="button" to="/product">Cadastrar novo produto</Link>
                 <button onClick={handleLogout} type="button">
                     <FiPower size={18} />
                 </button>

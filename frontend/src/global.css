@@ -5,9 +5,8 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 300;
-    font-size: 1.2rem;
+    font: 300 1.2rem 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
     background-color: #c0c0c0;
     color: #000;
     text-align:center;
@@ -18,7 +17,7 @@ h1,h2 {
     font-weight: 300;
 }
 input, button, textarea{
-    font: 400 18px;
+    font: 400 18px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
 }
 
 button{

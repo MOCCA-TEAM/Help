@@ -18,8 +18,8 @@ export default function Logon(){
             localStorage.setItem('petshopId', id);
             localStorage.setItem('petshopName', response.data.name);
 
-            history.push('/register'); //temporario enquanto não faz tela de perfil
-            //history.push('/profile');//falta criar a rota do perfil
+           // history.push('/register'); //temporario enquanto não faz tela de perfil
+            history.push('/profile');//falta criar a rota do perfil
         }
         catch(err){
             alert('Falha no LogIn, tente novamente!');

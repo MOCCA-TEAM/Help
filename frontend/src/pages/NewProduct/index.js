@@ -7,13 +7,13 @@ export default function NewProduct(){
         <div className="new-product-container">
             <div classname="content">
                 <section>
-                    <Link to="/">
+                    <Link to="/profile">
                         <FiArrowLeft size="16"/>
                         Voltar
                     </Link>
                     <h1>Cadastrar novo produto</h1>
                 </section>
-                <form onSubmit={handleRegister}>
+                <form>
                     <div><input placeholder="Nome do PetShop" /></div>
                     <div><input type="text" placeholder="Descrição" /></div>
                     <div></div>

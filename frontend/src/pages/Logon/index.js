@@ -33,7 +33,7 @@ export default function Logon(){
                 <form onSubmit={handleLogin}>
                     <h1>Logon</h1>
                     <div><input placeholder="Sua ID" value={id} onChange={ e => setId(e.target.value)} /></div>
-                    <div> <button type="submit">Entrar</button></div>
+                    <div> <button className="button" type="submit">Entrar</button></div>
                     <Link to="/register">
                         <FiLogIn size={16}/>
                         Não Tenho Cadastro</Link>

@@ -13,17 +13,18 @@ var ProfileController = require('./controllers/ProfileController');
 
 
 routes.post('/sessions', SessionController.create);
+routes.get('/profile', ProfileController.index) 
 
-routes.post("/petshops", PetshopsController.create);// cria um petshop
-routes.get("/petshops", PetshopsController.list);// lista todos os petshops
-routes.delete("/petshops/:id", PetshopsController.delete);// deleta petshop cujo id foi informado
+routes.post('/petshops', PetshopsController.create);// Cria um petshop
+routes.get('/petshops', PetshopsController.list);// Listar todos os petshops
+routes.delete('/petshops/:id', PetshopsController.delete);// Deleta petshop cujo id foi informado
 
-routes.get('/foods', FoodsController.index);
-routes.post('/foods', FoodsController.create);
+routes.post('/foods', FoodsController.create);// Criar a comida
+routes.get('/foods', FoodsController.index);// Listar todas comidas
+routes.delete("/foods/:id", PetshopsController.delete);// Deletar comida
 
-routes.get('/profile', ProfileController.index)
-routes.get('/itens', ItemController.index)
-routes.post('/itens', ItemController.create);
-routes.delete('/itens/:id', ItemController.delete);
+routes.post('/itens', ItemController.create);// Criar o Item
+routes.get('/itens', ItemController.index);// Listar todos os itens
+routes.delete('/itens/:id', ItemController.delete);// Deletar Item
 
 module.exports = routes;

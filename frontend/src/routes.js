@@ -16,8 +16,8 @@ export default function Routes(){
                 <Route path="/register" component={Register} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/product" component={NewProduct}/>
-                <Route path="/product/new/item" component={NewItem}/>
-                <Route path="/product/new/food" component={NewFood}/>
+                <Route path="/newItem" component={NewItem}/>
+                <Route path="/newFood" component={NewFood}/>
             </Switch>
         </BrowserRouter>
     );

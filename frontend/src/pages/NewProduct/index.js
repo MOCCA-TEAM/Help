@@ -1,17 +1,15 @@
-import React, {useState} from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react'
+import { useHistory } from 'react-router-dom';
 
 import './styles.css';
 
 export default function NewProduct(){
-    //Escolha
-    // Variável de recurso
     const history = useHistory();
     function handleItens() {
-        history.push('/product/new/item');
+        history.push('/newItem');
     }
     function handleFoods() {
-        history.push('/product/new/food');
+        history.push('/newFood');
     }
     return (
         <div className="new-product-container">
@@ -20,7 +18,7 @@ export default function NewProduct(){
 
                 <section classname='headers'>
                 <h1>Oque deseja cadastrar?</h1>
-                <Link className="button" to="/product/new/item">Cadastrar novo produto</Link>
+                <button  onClick={handleItens}>Itens</button>
                 <button  onClick={handleFoods}>Rações</button>
                     
                 </section>

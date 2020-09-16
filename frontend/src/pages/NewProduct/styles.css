@@ -1,0 +1,16 @@
+.new-product-container{
+    width: 100%;
+    height: 100%;
+}
+.new-product-container form div{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 30px;
+    align-items: center;
+}
+.new-product-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

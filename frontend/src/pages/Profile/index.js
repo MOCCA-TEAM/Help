@@ -12,8 +12,7 @@ export default function Profile(){
     const history = useHistory();
     const petshopId = localStorage.getItem('petshopId');
     const petshopName = localStorage.getItem('petshopName');
-   
-    // Listar Produtos
+
     useEffect(() =>{
         api.get('profile', {
             headers: {
@@ -23,7 +22,7 @@ export default function Profile(){
             setProducts(response.data);
         })
     }, [petshopId]); 
-    //Deletar Produto
+
     async function handleDeleteProduct(id){
         try{
             await api.delete(`products/${id}`, {
@@ -59,7 +58,7 @@ export default function Profile(){
             <ul>
                {products.map(product => (
                <li key ={product.id}>
-                    <strong>ITEM:</strong>
+                    <strong>PRODUTO:</strong>
                     <p>{product.name}</p>
 
                     <strong>DESCRIÇÃO:</strong>

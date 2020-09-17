@@ -12,7 +12,7 @@ export default function Profile(){
     const history = useHistory();
     const petshopId = localStorage.getItem('petshopId');
     const petshopName = localStorage.getItem('petshopName');
-
+    
     useEffect(() =>{
         api.get('profile', {
             headers: {
@@ -32,14 +32,14 @@ export default function Profile(){
             });
             setProducts(products.filter(product => product.id !== id))
         }catch(err){
-            alert('Erro ao deletar caso, tente novamente.')
+            alert('Erro ao deletar produto, tente novamente.')
         }
     }
 
     function handleLogout() {
         localStorage.clear();
 
-        history.push('/login');
+        history.push('/');
     }
 
     return (
@@ -59,7 +59,7 @@ export default function Profile(){
                {products.map(product => (
                <li key ={product.id}>
                     <strong>PRODUTO:</strong>
-                    <p>{product.name}</p>
+                    <p>{product.name}</p>   
 
                     <strong>DESCRIÇÃO:</strong>
                     <p>{product.description}</p>

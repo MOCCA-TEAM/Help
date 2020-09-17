@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FiLogIn } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -18,12 +20,19 @@ export default function Init(){
 
     return (
         <div classname="profile-container">
-            
+            <header>
+            <Link className="button" to="/login">LogIn
+                <button type="button">
+                    <FiLogIn size={18} />
+                </button>
+            </Link>
+            </header>
+
             <h1>Petshops Cadastrados</h1>
 
             <ul>
                {petshops.map(petshops => (
-               <li>
+               <li key={petshops.id}>
                     <strong>NOME DO PETSHPOP:</strong>
                     <p>{petshops.name}</p>
 
@@ -38,9 +47,6 @@ export default function Init(){
 
                     <strong>EMAIL:</strong>
                     <p>{petshops.email}</p>
-
-                    <strong>DESCRIPTION:</strong>
-                    <p>{petshops.description}</p>
 
                     <strong>WHATSAPP:</strong>
                     <p>{petshops.whatsapp}</p>

@@ -48,7 +48,7 @@ export default function NewProduct(){
 
                 <section classname='headers'>
 
-                    <Link to="/profile">
+                    <Link to="/product">
                         <FiArrowLeft size="16"/>
                         Voltar
                     </Link>

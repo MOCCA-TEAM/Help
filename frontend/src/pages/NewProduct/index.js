@@ -1,18 +1,30 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 
 import './styles.css';
 
 export default function NewProduct(){
+
     const history = useHistory();
+    //redirecionamento para cadastro de itens
     function handleItens() {
-        history.push('/newItem');
+        history.push('/newitem');
     }
+    //redirecionamento para cadastro de foods
     function handleFoods() {
-        history.push('/newFood');
+        history.push('/newfood');
     }
     return (
         <div className="new-product-container">
+             <section classname='headers'>
+
+                    <Link to="/profile">
+                        <FiArrowLeft size="16"/>
+                        Voltar
+                    </Link>
+
+                </section>
 
             <div classname="content">
 

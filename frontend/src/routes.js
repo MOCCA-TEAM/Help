@@ -7,17 +7,19 @@ import Profile from './pages/Profile';
 import NewProduct from './pages/NewProduct/index';
 import NewItem from './pages/NewProduct/NewItem/index';
 import NewFood from './pages/NewProduct/NewFood/index';
+import Init from './pages/Init/index';
 
 export default function Routes(){
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact component={Logon} />
+                <Route path="/" exact component={Init} />
+                <Route path="/login" component={Logon} />
                 <Route path="/register" component={Register} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/product" component={NewProduct}/>
-                <Route path="/newItem" component={NewItem}/>
-                <Route path="/newFood" component={NewFood}/>
+                <Route path="/newitem" component={NewItem}/>
+                <Route path="/newfood" component={NewFood}/>
             </Switch>
         </BrowserRouter>
     );

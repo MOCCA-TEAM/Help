@@ -36,7 +36,7 @@ export default function NewProduct(){
         } catch(err){
             alert('Erro ao cadastrar caso, tente novamente.')
         }
-        history.push('/profile');
+        history.push('/product');
     }
     return (
         <div className="new-product-container">
@@ -45,7 +45,7 @@ export default function NewProduct(){
 
                 <section classname='headers'>
 
-                    <Link to="/profile">
+                    <Link to="/product">
                         <FiArrowLeft size="16"/>
                         Voltar
                     </Link>

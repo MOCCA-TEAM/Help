@@ -8,11 +8,12 @@ import './styles.css';
 
 export default function Profile(){
     const [products, setProducts] = useState([]);
+    const [productsf, setProductsf] = useState([]);
 
     const history = useHistory();
     const petshopId = localStorage.getItem('petshopId');
     const petshopName = localStorage.getItem('petshopName');
-    
+
     useEffect(() =>{
         api.get('profile', {
             headers: {
@@ -23,23 +24,46 @@ export default function Profile(){
         })
     }, [petshopId]); 
 
-    async function handleDeleteProduct(id){
+    useEffect(() =>{
+        api.get('foods', {
+            headers: {
+                Authorization: petshopId,
+            }
+        }).then(response =>{
+            setProductsf(response.data);
+        })
+    }, [petshopId]); 
+
+    async function handleDeleteItem(id){
         try{
-            await api.delete(`products/${id}`, {
+            await api.delete(`itens/${id}`, {
                 headers: {
                     Authorization: petshopId,
                 }
             });
             setProducts(products.filter(product => product.id !== id))
         }catch(err){
-            alert('Erro ao deletar produto, tente novamente.')
+            alert('Erro ao deletar caso, tente novamente.')
+        }
+    }
+
+    async function handleDeleteFood(id){
+        try{
+            await api.delete(`foods/${id}`, {
+                headers: {
+                    Authorization: petshopId,
+                }
+            });
+            setProductsf(productsf.filter(product => product.id !== id))
+        }catch(err){
+            alert('Erro ao deletar caso, tente novamente.')
         }
     }
 
     function handleLogout() {
         localStorage.clear();
 
-        history.push('/');
+        history.push('/login');
     }
 
     return (
@@ -54,25 +78,82 @@ export default function Profile(){
             </header>
 
             <h1>Produtos Cadastrados</h1>
-
+            <div>
             <ul>
-               {products.map(product => (
-               <li key ={product.id}>
+               {products.map(produc => (
+               <li key ={produc.id}>
                     <strong>PRODUTO:</strong>
-                    <p>{product.name}</p>   
+                    <p>{produc.name}</p>
 
                     <strong>DESCRIÇÃO:</strong>
-                    <p>{product.description}</p>
+                    <p>{produc.description}</p>
 
                     <strong>PREÇO:</strong>
-                    <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(product.price)}</p>
+                    <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produc.price)}</p>
 
-                    <button onClick={() => handleDeleteProduct(product.id)} type="button">
+                    <button onClick={() => handleDeleteItem(produc.id)} type="button">
                         <FiTrash2 size={20} color="#a8a8b3"/>
                     </button>
                 </li>
                 ))} 
             </ul>
+            </div>
+            <div>
+            <ul>
+               {productsf.map(produc => (
+               <li key ={produc.id}>
+                    <strong>PRODUTO:</strong>
+                    <p>{produc.product}</p>
+
+                    <strong>TIPO:</strong>
+                    <p>{produc.type}</p>
+
+                    <strong>CATEGORIA:</strong>
+                    <p>{produc.category}</p>
+
+                    <strong>VALOR NUTRITIVO:</strong>
+                    <p>{produc.ntvalue}</p>
+
+                    <strong>PREÇO:</strong>
+                    <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produc.price)}</p>
+
+                    <button onClick={() => handleDeleteFood(produc.id)} type="button">
+                        <FiTrash2 size={20} color="#a8a8b3"/>
+                    </button>
+                </li>
+                ))} 
+            </ul>
+            </div>
         </div>
     );
 };
+/*
+
+            <div>
+            <ul>
+               {products.map(produc => (
+               <li key ={produc.id}>
+                   
+                    <strong>PRODUTO:</strong>
+                    <p>{produc.product}</p>
+
+                    <strong>CATEGORIA:</strong>
+                    <p>{produc.category}</p>
+
+                    <strong>TIPO:</strong>
+                    <p>{produc.type}</p>
+
+                    <strong>VALOR NUTRITIVO:</strong>
+                    <p>{produc.ntvalue}</p>
+
+                    <strong>PREÇO:</strong>
+                    <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produc.price)}</p>
+
+                    <button onClick={() => handleDeleteProduct(produc.id)} type="button">
+                        <FiTrash2 size={20} color="#a8a8b3"/>
+                    </button>
+                </li>
+                ))} 
+            </ul>
+            </div>
+*/

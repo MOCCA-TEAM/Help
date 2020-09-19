@@ -8,7 +8,6 @@ import Init from './pages/Init';
 import NewProduct from './pages/NewProduct/index';
 import NewItem from './pages/NewProduct/NewItem/index';
 import NewFood from './pages/NewProduct/NewFood/index';
-//import Init from './pages/Init/index';
 
 export default function Routes(){
     return(

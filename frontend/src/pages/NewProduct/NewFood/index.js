@@ -52,7 +52,7 @@ export default function NewProduct(){
                         <FiArrowLeft size="16"/>
                         Voltar
                     </Link>
-                    <h1>Cadastrar no Produto</h1>
+                    <h1>Cadastro de Novo Alimento</h1>
 
                 </section>
 
@@ -60,13 +60,13 @@ export default function NewProduct(){
                     <div classname="inputsDiv">
                             <input 
                             placeholder="Título do Produto" 
-                            value = {category}
-                            onChange={e => setCategory(e.target.value)}
+                            value = {product}
+                            onChange={e => setProduct(e.target.value)}
                             />
                         </div>
                     <div classname="inputsDiv">
                         <input 
-                        placeholder="Título do Produto" 
+                        placeholder="Tipo de Produto" 
                         value = {type}
                         onChange={e => setType(e.target.value)}
                         />
@@ -75,16 +75,8 @@ export default function NewProduct(){
                     <div classname="inputsDiv">
                         <input 
                         placeholder = "Descrição" 
-                        value = {product}
-                        onChange = {e => setProduct(e.target.value)}
-                        />
-                    </div>
-                    
-                    <div classname="inputsDiv">
-                        <input 
-                        placeholder="Valor em Real" 
-                        value = {price}
-                        onChange = {e => setPrice(e.target.value)}
+                        value = {category}
+                        onChange = {e => setCategory(e.target.value)}
                         />
                     </div>
 
@@ -93,6 +85,14 @@ export default function NewProduct(){
                         placeholder="Valor nutricional" 
                         value = {ntvalue}
                         onChange = {e => setNtvalue(e.target.value)}
+                        />
+                    </div>
+                    
+                    <div classname="inputsDiv">
+                        <input 
+                        placeholder="Valor em Real" 
+                        value = {price}
+                        onChange = {e => setPrice(e.target.value)}
                         />
                     </div>
                     <button type = "submit">Cadastrar</button>

@@ -22,13 +22,13 @@ export default function NewProduct(){
         e.preventDefault();
         // Conexão com o banco de dados de Itens
 
-        const data = {
+        const datat = {
             name,
             description,
             price,
         }
         try{
-            await api.post('itens', data, {
+            await api.post('itens', datat, {
                 headers: {
                     Authorization: petshopId,
                 }
@@ -36,7 +36,7 @@ export default function NewProduct(){
         } catch(err){
             alert('Erro ao cadastrar caso, tente novamente.')
         }
-        history.push('/product');
+        history.push('/profile');
     }
     return (
         <div className="new-product-container">
